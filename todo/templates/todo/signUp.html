@@ -1,0 +1,24 @@
+{% extends 'todo/nav.html' %} {% block content %}
+
+<div>
+  <div class="container">
+    <div class="row" id="wrapper">
+      <div class="col-md-5" id="signup_form">
+        <div class="alert alert-success"><h2>Create Account</h2></div>
+        <div class="p-4">
+          <form method="POST" action="/signup/">
+            {% csrf_token %} {{ form.as_ul }}
+            <hr />
+            <input
+              class="btn btn-success create_acc_btn"
+              type="submit"
+              value="Create Account"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

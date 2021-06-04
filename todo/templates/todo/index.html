@@ -1,0 +1,93 @@
+{% extends 'todo/nav.html' %} {% block content %}
+
+<div>
+  <h3 class="user_name">Hi, {{user}}</h3>
+  <div class="container-fluid">
+    <div class="row" id="wrapper">
+      <div class="col-lg-4" id="form-content">
+        <div class="alert alert-info">
+          <h2><i class="far fa-clipboard"></i> Add New TODO</h2>
+        </div>
+        <div class="p-5">
+          <form action="/add-todo/" method="POST">
+            {% csrf_token %} {{ form.as_p }}
+            <hr />
+            <input type="submit" value="ADD" class="btn add_btn" />
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-7" id="todos-content">
+        <div class="border">
+          {% if todos|length != 0 %}
+          <h1><i class="fas fa-tasks"></i> Your TODOs</h1>
+          <br />
+          <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Status</th>
+                  <th>Priority</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for todo in todos %}
+                <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{todo.title}}</td>
+                  <td id="tick">
+                    {% if todo.status == 'C' %}
+                    <i class="fas fa-check fa-lg"></i>
+                    {% else %}
+                    <i class="far fa-clock fa-lg"></i>
+                    {% endif %}
+                  </td>
+                  <td>{{todo.priority}}</td>
+                  <td>
+                    {% if todo.status == 'C' %}
+                    <a
+                      href="/change-status/{{todo.id}}/P"
+                      type="submit"
+                      class="btn"
+                      title="Mark Incomplete"
+                      ><i class="far fa-clock fa-lg"></i
+                    ></a>
+                    {% else %}
+                    <a
+                      href="/change-status/{{todo.id}}/C"
+                      type="submit"
+                      class="btn"
+                      title="Mark Complete"
+                      ><i class="fas fa-check fa-lg"></i
+                    ></a>
+                    {% endif %}
+                    <a
+                      href="/delete-todo/{{todo.id}}"
+                      type="submit"
+                      class="btn"
+                      title="Delete"
+                      ><i class="fas fa-trash fa-lg"></i
+                    ></a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div>
+            <br /><br />
+            <div class="alert alert-info text-center">
+              <p class="display-4">NO TODOs</p>
+            </div>
+          </div>
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

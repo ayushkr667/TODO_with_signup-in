@@ -1,0 +1,20 @@
+{% extends 'todo/nav.html' %}{% block content %}
+
+<div>
+  <div class="container">
+    <div class="row" id="wrapper">
+      <div class="col-lg-5" id="signin_form">
+        <div class="alert alert-info"><h2>Login</h2></div>
+        <div class="p-5">
+          <form action="/logIn/" method="POST">
+            {% csrf_token %} {{ form.as_p }}
+            <hr />
+            <input type="submit" value="Login" class="btn btn-info login_btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

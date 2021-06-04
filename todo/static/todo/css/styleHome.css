@@ -1,0 +1,132 @@
+body {
+  background-color: rgb(56, 55, 55);
+  font-family: "Noto Serif", serif;
+}
+
+#wrapper {
+  font-size: 1.3rem;
+  color: black;
+}
+
+#todos-content {
+  margin-top: 1.2%;
+  margin-left: 2%;
+  background: #54a0ff;
+  padding: 25px;
+  box-shadow: 18px 30px 25px 5px rgb(60, 5, 15);
+}
+
+#form-content {
+  margin-top: 1.2%;
+  background: #568dd4;
+  margin-left: 2%;
+  padding: 25px;
+  box-shadow: -8px 15px 10px 10px rgb(60, 5, 15);
+}
+
+#signin_form,
+#signup_form {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 2%;
+  background: #54a0ff;
+  padding: 25px;
+  box-shadow: 18px 30px 25px 5px rgb(60, 5, 15);
+  width: 70%;
+}
+
+.alert {
+  text-align: center;
+  color: rgb(50, 2, 2);
+}
+
+.user_name {
+  margin-left: 42%;
+  color: whitesmoke;
+}
+
+.errorlist {
+  color: rgb(63, 3, 3);
+}
+
+#id_title {
+  background-color: whitesmoke;
+  margin-left: 5.2%;
+  height: 28px;
+  box-shadow: 2px 5px;
+}
+
+#id_status {
+  background-color: whitesmoke;
+  margin-left: 2.6%;
+  padding: 3px 45px 3px 20px;
+  box-shadow: 2px 5px;
+}
+
+#id_priority {
+  background-color: whitesmoke;
+  margin-left: 1.5%;
+  padding: 3px 85px 3px 20px;
+  box-shadow: 2px 5px;
+}
+
+.add_btn,
+.login_btn,
+.create_acc_btn {
+  margin: 0% 35%;
+  text-align: center;
+  background-color: green;
+  padding: 5px 25px;
+  color: whitesmoke;
+}
+
+.navbar {
+  background-color: rgb(50, 2, 2);
+}
+
+.navbar-inverse .navbar-brand {
+  color: whitesmoke;
+}
+
+.fa-sign-out-alt,
+.fa-sign-in-alt,
+.fa-user-plus {
+  color: whitesmoke;
+}
+
+.helptext {
+  opacity: 0;
+}
+
+#id_username,
+#id_password1,
+#id_password2,
+#id_password {
+  box-shadow: 2px 5px;
+  height: 28px;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+#id_password1 {
+  margin-bottom: 2%;
+}
+
+.fa-trash {
+  color: rgb(114, 3, 3);
+}
+
+.fa-check {
+  color: rgb(5, 82, 5);
+}
+
+.fa-clock {
+  color: rgb(245, 245, 160);
+}
+
+.table > tbody > tr > td {
+  padding-top: 3%;
+}
+
+.table > thead > tr > th {
+  font-size: 18px;
+}
